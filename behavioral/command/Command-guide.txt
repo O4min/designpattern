@@ -1,0 +1,47 @@
+Command Pattern
+components:
+1-command
+2-receiver
+3-invoker
+4-client
+
+category: behavioral
+
+command pattern allows us to encapsulate the request. In the command pattern, we encapsulate the request into
+a standalone object that contains all the information about the execution of the request. Well, but what’s the
+benefit of doing that?
+**************************************************************
+
+
+Let's look at some of those benefits:
+
+1-We are encapsulating method calls into concrete commands along with important data, not only it makes code much more
+readable, but also it makes adding and removing commands in a much cleaner way. We don’t need to change the existing
+classes or methods to add new behaviors. Design principle — The system should be open for extension and closed for
+modification. ✅
+
+2-Using a command as an object opens up whole new possibilities. For instance, we can store command objects in a list,
+stack, set, map, and manipulate them however we want. Now we can easily maintain a history of all the commands or check
+frequently used commands etc. We can perform the “Undo” of a given command if we have maintained the order of execution.
+These features are immensely helpful in situations like building games like Chess or Git where we need to roll back and
+move to the previous state of the application. Also, we can pass commands as method arguments or store them inside other
+objects.
+
+3-With the help of a command pattern, we can decouple the logic of execution of the command from the command invoker.
+consider this analogy, you go to the restaurant, you order a delicious Cheeseburger, french fries, brownie, and
+ice cream. The waiter takes an order and writes it on a piece of paper. He will hand the order to a cook, the cook
+will prepare dishes and ask the waiter to confirm the order and deliver it to the customer’s table. In this whole
+scenario, the order is our command. The waiter need not know how to prepare dishes, the cook is the only person that
+is responsible to prepare the recipe. We are separating layers of concerns. Cook prepares the recipe while the waiter
+takes the order from the customer. Design Principle — Separating layers of concern. ✅
+***************************************************************
+
+
+When to use it?
+
+1-After looking at the use case of the pattern, one thing we can surely derive is when we a have series of transactional
+behavior and there can be a possibility where we want to move back to the previous state that time this pattern can be
+a massively powerful tool.
+2-When the execution logic of the command is complex and used at multiple places in our application, then we can decouple
+it from the invoker and put it into a separate command. This will reduce the redundancy of our code and improve
+readability.
