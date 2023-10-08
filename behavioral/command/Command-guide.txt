@@ -36,6 +36,10 @@ is responsible to prepare the recipe. We are separating layers of concerns. Cook
 takes the order from the customer. Design Principle — Separating layers of concern. ✅
 ***************************************************************
 
+disadvantages
+
+Increase in the number of classes for each individual command
+***************************************************************
 
 When to use it?
 
@@ -45,3 +49,7 @@ a massively powerful tool.
 2-When the execution logic of the command is complex and used at multiple places in our application, then we can decouple
 it from the invoker and put it into a separate command. This will reduce the redundancy of our code and improve
 readability.
+***************************************************************
+
+The Command pattern is pretty common in Java code. Most often it’s used as an alternative for callbacks to
+parameterizing UI elements with actions. It’s also used for queueing tasks, tracking operations history, etc.
