@@ -11,10 +11,13 @@ public class Demo {
 
 
     public static void main(String[] args) {
-        Discounter easterDiscounter = new EasterDiscounter();
-        easterDiscounter.apply(BigDecimal.TEN);
-
-        Discounter.easter();
+        Discounter oldWay = new EasterDiscounter();
+        var afterDiscount = oldWay.apply(BigDecimal.TEN);
+        System.out.println("before discount = " + BigDecimal.TEN);
+        System.out.println("after old way easter discount = " + afterDiscount);
+        var newWay = Discounter.easter().apply(BigDecimal.valueOf(10000L));
+        System.out.println("before discount = "+ BigDecimal.valueOf(10000L));
+        System.out.println("after new way to calculate easter discount = "+ newWay);
     }
 
 }
