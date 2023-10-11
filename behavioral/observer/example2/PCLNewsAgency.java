@@ -11,22 +11,22 @@ import java.beans.PropertyChangeSupport;
 public class PCLNewsAgency {
     private String news;
 
-    private PropertyChangeSupport support;
+    private PropertyChangeSupport changeSupport;
 
     public PCLNewsAgency() {
-        support = new PropertyChangeSupport(this);
+        changeSupport = new PropertyChangeSupport(this);
     }
 
-    public void addPropertyChangeListener(PropertyChangeListener pcl) {
-        support.addPropertyChangeListener(pcl);
+    public void addPropertyChangeListener(PropertyChangeListener changeListener) {
+        changeSupport.addPropertyChangeListener(changeListener);
     }
 
-    public void removePropertyChangeListener(PropertyChangeListener pcl) {
-        support.removePropertyChangeListener(pcl);
+    public void removePropertyChangeListener(PropertyChangeListener changeListener) {
+        changeSupport.removePropertyChangeListener(changeListener);
     }
 
     public void setNews(String value) {
-        support.firePropertyChange("news", this.news, value);
+        changeSupport.firePropertyChange("news", this.news, value);
         this.news = value;
     }
 }
