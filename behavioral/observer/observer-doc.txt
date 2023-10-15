@@ -1,0 +1,32 @@
+Observer pattern
+
+The observer design pattern enables a subscriber to register with and receive notifications from a provider. It's
+suitable for any scenario that requires push-based notification. The pattern defines a provider (also known as a
+subject or an observable) and zero, one, or more observers.
+==================================================================
+
+when to use?
+
+The observer design pattern is suitable for distributed push-based notifications, because it supports a clean
+separation between two different components or application layers, such as a data source (business logic) layer
+and a user interface (display) layer. The pattern can be implemented whenever a provider uses callbacks to supply
+its clients with current information.
+==================================================================
+
+Which problems can the observer design pattern solve?
+
+The observer pattern addresses the following problems:
+1-A one-to-many dependency between objects should be defined without making the objects tightly coupled.
+2-When one object changes state, an open-ended number of dependent objects should be updated automatically.
+3-An object can notify multiple other objects.
+A one-to-many dependency between objects should be defined without making the objects tightly coupled.
+When one object changes state, an open-ended number of dependent objects should be updated automatically.
+An object can notify multiple other objects.
+==================================================================
+
+A weakness:
+
+The observer pattern can cause memory leaks, known as the lapsed listener problem, because in a basic implementation,
+it requires both explicit registration and explicit de-registration, as in the dis-pose pattern,
+because the subject holds strong references to the observers, keeping them alive.
+This can be prevented if the subject holds weak references to the observers.
